@@ -149,11 +149,11 @@ Player.prototype.takeItem = function(item){
 
   if(this.getPack().length < 3){
     this.getPack().push(item);
-    console.log(this.getPack() + " " +  item + " " + "was successfully added");
+    console.log(this.getPack() + " " +  item + " " + "was successfully added.");
     return true;
   }
   else {
-    console.log("The pack it too full," + " " + item + " " + "could not be stored");
+    console.log("The pack it too full," + " " + item + " " + "could not be stored.");
     return false;
   }
 };
@@ -200,13 +200,13 @@ Player.prototype.takeItem = function(item){
 
 Player.prototype.discardItem = function(item) {
     if (this.getPack().indexOf(item) === -1) {
-      console.log("Can't find item");
+      console.log("Cannot find item.");
       return false;
     }
     else {
       var index = this.getPack().indexOf(item);
       this.getPack().splice(index, 1);
-      console.log(this.name + ' , ' + item.name + ' discarded item.');
+      console.log(this.name + ' , ' + item.name + ' discarded the item.');
       return true;
     }
   };
@@ -277,12 +277,12 @@ Player.prototype.equip = function(itemToEquip) {
  */
  Player.prototype.eat = function(itemToEat){
     if (this.getPack().indexOf(itemToEat) === -1){
-    console.log("Not found in pack");
+    console.log("Item not found in pack");
     return false;
   }
 
   if (!(itemToEat instanceof Food)){
-    console.log("Not food");
+    console.log("Hey that's not food!");
     return false;
  }
   this.health += itemToEat.energy;
